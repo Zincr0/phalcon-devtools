@@ -83,11 +83,7 @@ class AllModels extends Command implements CommandsInterface
                 $config = include $configPath;
             }
 
-            if (file_exists($path.'public')) {
-                $modelsDir = 'public/'.$config->application->modelsDir;
-            } else {
-                $modelsDir = $config->application->modelsDir;
-            }
+            $modelsDir = $config->application->modelsDir;
         } else {
             $modelsDir = $this->getOption('models');
         }
