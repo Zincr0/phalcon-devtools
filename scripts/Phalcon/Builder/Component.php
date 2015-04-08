@@ -80,14 +80,6 @@ abstract class Component
             }
         }
 
-	print("\r\n");
-	print("config not found");
-	print("\r\n");
-	print("path: ");
-	var_dump($path);
-	#var_dump($config);
-	print("\r\n");
-
         $directory = new \RecursiveDirectoryIterator('.');
         $iterator = new \RecursiveIteratorIterator($directory);
         foreach ($iterator as $f) {
