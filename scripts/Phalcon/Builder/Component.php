@@ -57,11 +57,17 @@ abstract class Component
      */
     protected function _getConfig($path)
     {
-	#wrong path from Model.php
+	#wrong path from cli
 	if ($path == '.')
 	{
-	  $path = './';
+	  $path = './'; 
 	}
+	$currentPath = explode("/", getcwd());
+	#wrong path from webtools
+	if (end($currentPath) == 'public'){
+	  $path = './../';
+	}
+	
 	
         foreach (array('app/config/', 'config/') as $configPath) {
             #print Color::info($path);
